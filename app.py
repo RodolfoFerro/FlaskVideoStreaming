@@ -11,7 +11,7 @@ def index():
 
 def gen(stream):
     while True:
-        frame = stream.get_frame()
+        frame = stream.detect_faces()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
